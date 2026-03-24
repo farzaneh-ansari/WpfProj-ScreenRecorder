@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfProj.Model;
 using WpfProj.ViewModel;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace WpfProj.View
 {
@@ -28,8 +29,14 @@ namespace WpfProj.View
             WindowSettingVM windowSettingVM = new WindowSettingVM();
             this.DataContext = windowSettingVM;
             
-           
+            var widthExprs = ExpressionHelper.CreateMemberInitExpression<WindowSettingVM, int>(x => x.Width, 200);
 
+            ExpressionHelper.CreateMemberInitExpression<WindowSettingVM, int>(x => x.Height, 400);
+
+            var windowSetting = ExpressionHelper.CreateObjectFromExpression<WindowSettingVM>(ExpressionHelper.CreateMemberInitExpression<WindowSettingVM, int>(x => x.Width, 200));
+
+            Console.WriteLine(windowSetting.Width);
+            Console.WriteLine(widthExprs.ToString());
         }
     }
 }

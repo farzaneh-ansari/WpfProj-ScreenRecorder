@@ -26,11 +26,13 @@
 
         <TextBlock Grid.Row="2" Name="textBox2" DataContext="{Binding NameList}">
             <TextBlock.Text>
-                    <MultiBinding Converter="{StaticResource nameConverter}" ConverterParameter="FormatLastFirst">
+                <MultiBinding Converter="{StaticResource nameConverter}" ConverterParameter="FormatLastFirst">
                     <Binding Path="FirstName"/>
                     <Binding Path="LastName"/>
                 </MultiBinding>
             </TextBlock.Text>
         </TextBlock>
+        <!--<ComboBox Grid.Row="2" Name="comboBox1" ItemsSource="{Binding NameList}"  DisplayMemberPath="FirstName" SelectedItem="{Binding NameList[2] , UpdateSourceTrigger=PropertyChanged}"-->
+        <ComboBox Grid.Row="2" Name="comboBox1" ItemsSource="{Binding WidthList}"  SelectedItem="{Binding Width , UpdateSourceTrigger=PropertyChanged}"/>
     </Grid>
 </UserControl>

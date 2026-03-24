@@ -33,7 +33,7 @@ namespace WpfProj.ViewModel
                 _height = value;
                 OnPropertyChanged();
             }
-        }        
+        }
 
         public List<Person> NameList { get; set; } = new List<Person>()
             {
@@ -41,5 +41,7 @@ namespace WpfProj.ViewModel
                 new Person() { FirstName = "Jane", LastName = "Smith" },
                 new Person() { FirstName = "Michael", LastName = "Johnson" }
             };
+
+        public List<int> WidthList { get; set; } = [50, 80, 70];
     }
 }

@@ -10,6 +10,8 @@
     <Grid>
 
         <!--<controls:ScreenRecord/>-->
-        <controls:ScreenRecord3D9/>
+        <!--<controls:ScreenRecord3D9/>-->
+        <controls:WidowSetting/>
+        <!--<controls:CalculatorSetting/>-->
     </Grid>
 </Window>
